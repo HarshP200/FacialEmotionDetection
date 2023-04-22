@@ -12,8 +12,11 @@ def home(request):
     return render(request, "home.html")
 
 def emotion(request):
-    emo = TestData.Test()
 
+    if(request.GET.get('mood')):
+       emo = request.GET.get('mood')
+    else:
+        emo = TestData.Test()
     if emo == "No Face detected":
         return redirect('/?found=' + emo)
 
