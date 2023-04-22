@@ -1,72 +1,92 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Emotion Detection Page</title>
-	<!-- Include CSS stylesheet -->
-	<style>
-		/* General styles */
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
-
-		header {
-			background-color: #333;
-			color: #fff;
-			padding: 20px;
-		}
-
-		h1 {
-			margin: 0;
-		}
-
-		main {
-			padding: 20px;
-		}
-
-		footer {
-			background-color: #333;
-			color: #fff;
-			padding: 20px;
-			text-align: center;
-		}
-
-		/* Button styles */
-		.button-container {
-			display: flex;
-			justify-content: center;
-			margin-top: 30px;
-		}
-
-		.check-mood-btn {
-			background-color: #ff5050;
-			border: none;
-			border-radius: 5px;
-			color: #fff;
-			cursor: pointer;
-			font-size: 1.2rem;
-			padding: 10px 20px;
-			transition: background-color 0.3s ease;
-		}
-
-		.check-mood-btn:hover {
-			background-color: #e60000;
-		}
-	</style>
-</head>
-<body>
-	<header>
-		<h1>Emotion Detection</h1>
-	</header>
-	<main>
-		<p>Learn more about emotion detection and how it can be used to improve mental health.</p>
-		<div class="button-container">
-			<a href="/match"> <button id="button1" class="check-mood-btn">Check My Mood</button> </a>
+	<head>
+		<title>My Mood Detector</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background-image: url('https://placekitten.com/1920/1080');
+				background-size: cover;
+				background-position: center;
+				font-family: Arial, sans-serif;
+			}
+			.heading {
+				padding: 20px;
+				text-align: center;
+				font-size: 36px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				color: #fff;
+			}
+			.container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			.label {
+				font-size: 24px;
+				font-weight: bold;
+				color: #fff;
+				margin-bottom: 20px;
+			}
+			.button-container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			.button {
+				padding: 10px 20px;
+				margin: 10px;
+				font-size: 18px;
+				font-weight: bold;
+				color: #fff;
+				background-color: #2196f3;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			.button:hover {
+				background-color: #0d8bef;
+			}
+			.button:focus {
+				outline: none;
+			}
+			.lets-find-out {
+				background-color: transparent;
+				color: #fff;
+				font-size: 18px;
+				font-weight: bold;
+				border: none;
+				cursor: pointer;
+				text-decoration: underline;
+				margin-top: 20px;
+			}
+			.lets-find-out:hover {
+				color: #0d8bef;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="heading">
+			<h1>My Mood Detector</h1>
 		</div>
-	</main>
-	<footer>
-		<p>Copyright © 2023 Emotion Detection Page</p>
-	</footer>
-</body>
+		<div class="container">
+			<div class="label">What's your mood?</div>
+			<div class="button-container">
+				<button class="button">Happy</button>
+				<button class="button">Sad</button>
+				<button class="button">Neutral</button>
+				<button class="button">Disgust</button>
+				<button class="button">Angry</button>
+				<button class="button">Fearful</button>
+				<button class="button">Surprise</button>
+			</div>
+			<a href="/match"><button class="lets-find-out">Let's find out</button></a>
+		</div>
+	</body>
 </html>
