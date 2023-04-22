@@ -19,7 +19,6 @@ def Test():
     cap = cv2.VideoCapture(0)
 
     # pass here your video path
-    # cap = cv2.VideoCapture("{complete video path}")
     # cap = cv2.VideoCapture("C:\\Users\\Harsh Pathak\\Downloads\\Emotion.mp4")
 
     emotions = [0] * 7
@@ -63,7 +62,6 @@ def Test():
         if emotions[i] > emotions[max_pos]:
             max_pos = i
 
-    # print(max_pos)
     for i in range(7):
         if i != max_pos and (sec_max_pos == -1 or emotions[i] > emotions[max_pos]):
             sec_max_pos = i
@@ -71,14 +69,9 @@ def Test():
     if max_pos == 4:
         if emotions[sec_max_pos] > 20:
             max_pos = sec_max_pos
-    # print(max_pos)
 
     if emotions[max_pos] == 0:
         return "No Face detected"
-
-    # path=".\Project\\music\\" + emotion_dict[max_pos]
-    # files=os.listdir(path)
-    # d=random.choice(files)
-    # os.startfile(path + "\\" + d)
+    
     print(str(emotion_dict[max_pos]))
     return str(emotion_dict[max_pos])

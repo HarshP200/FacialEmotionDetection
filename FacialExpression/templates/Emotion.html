@@ -20,7 +20,7 @@
 				letter-spacing: 2px;
 			}
 			.fullscreen-image {
-				background-image: url('https://placekitten.com/1920/1080');
+				background-image: url("{% static img_url %}");
 				background-size: cover;
 				background-position: center;
 				height: 100vh;
@@ -29,7 +29,7 @@
 				justify-content: center;
 			}
 			.audio-player {
-				background-color: rgba(185, 223, 223, 0.8);
+				background-color: rgba(185, 223, 223, 0.3);
 				
 				padding: 20px;
 				width: 50%;
@@ -94,14 +94,14 @@
 	</head>
 	<body>
 		<div class="heading">
-			<h1>Welcome to My Website</h1>
+			<h1>You seem {{emo}}</h1>
 		</div>
 		<div class="fullscreen-image">
-			<!-- Image goes here -->
+			<!-- <img src="{% static img_url %}"> -->
 		</div>
 		<div class="audio-player">
 			<div>
-				<h2>You seem {{emo}}</h2>
+				<h2>{{song_name}}</h2>
 				<audio controls autoplay id="audio-player">
 					<source src="{% static song_url %}" type="audio/mpeg">
 				</audio>

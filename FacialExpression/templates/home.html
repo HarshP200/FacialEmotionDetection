@@ -73,9 +73,12 @@
 	</head>
 	<body>
 		<div class="heading">
-			<h1>My Mood Detector</h1>
+			<h1>Facial Emotion Detector</h1>
 		</div>
 		<div class="container">
+			{% if Found == False %}
+				<h2>No Face Detected. Try Again</h2>
+			{% endif %}
 			<div class="label">What's your mood?</div>
 			<div class="button-container">
 				<button class="button">Happy</button>
@@ -86,7 +89,7 @@
 				<button class="button">Fearful</button>
 				<button class="button">Surprise</button>
 			</div>
-			<a href="/match"><button class="lets-find-out">Let's find out</button></a>
+			<a href="/emotion"><button class="lets-find-out">Let's find out</button></a>
 		</div>
 	</body>
 </html>
