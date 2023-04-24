@@ -23,8 +23,9 @@ def Test():
 
     emotions = [0] * 7
     counter = 0
+    frame_count = 25
 
-    while counter <= 10:
+    while counter < frame_count:
         # Find haar cascade to draw bounding box around face
         ret, frame = cap.read()
         frame = cv2.resize(frame, (1280, 720))
@@ -67,7 +68,7 @@ def Test():
             sec_max_pos = i
 
     if max_pos == 4:
-        if emotions[sec_max_pos] > 20:
+        if emotions[sec_max_pos] > int(frame_count * 0.2):
             max_pos = sec_max_pos
 
     if emotions[max_pos] == 0:
