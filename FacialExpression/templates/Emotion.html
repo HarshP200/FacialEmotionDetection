@@ -4,7 +4,31 @@
 		{% load static %}
 		<title>My Website</title>
 		<link rel="icon" href="{% static '\\icon.png' %}" type="image/x-icon">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 		<style>
+			.home-icon {
+				position: fixed;
+				top: 10px;
+				left: 10px;
+				z-index: 9999;
+			}
+
+			.home-icon a {
+				display: block;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				background-color: #333;
+				color: #fff;
+				border-radius: 50%;
+			}
+
+			.home-icon a i {
+				font-size: 20px;
+			}
+
+
 			body {
 				margin: 0;
 				padding: 0;
@@ -19,19 +43,23 @@
 				font-weight: bold;
 				text-transform: uppercase;
 				letter-spacing: 2px;
+				font-family: "oregon";
 			}
 			.fullscreen-image {
 				background-image: url("{% static img_url %}");
 				background-size: cover;
 				background-position: center;
-				height: 100vh;
+				height: 50vh;
+				width: 50vh;
+				margin-left: 37%;
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				margin-top: 60px;
 			}
 			.audio-player {
 				background-color: rgba(185, 223, 223, 0.3);
-				
+				font-family: "argent CF";
 				padding: 20px;
 				width: 50%;
 				margin: 0 auto;
@@ -44,6 +72,7 @@
 				left: 50%;
 				transform: translate(-50%, -50%);
 				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				margin-top: 69px;
 			}
 
 			.audio-player h2{
@@ -52,6 +81,7 @@
 				color: #cee27c9c;
 				text-shadow: 2px 2px 4px #000000;
 				font-size: 35px;
+				height: 33vb;
 			}
 
 			audio {
@@ -94,15 +124,18 @@
 		</style>
 	</head>
 	<body>
+		<div class="home-icon">
+			<a href="/"><i class="fa fa-home"></i></a>
+		</div>
 		<div class="heading">
 			<h1>You seem {{emo}}</h1>
 		</div>
+		
 		<div class="fullscreen-image">
-			<!-- <img src="{% static img_url %}"> -->
 		</div>
 		<div class="audio-player">
 			<div>
-				<h2>{{song_name}}</h2>
+				<h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">{{song_name}}</h2>
 				<audio controls autoplay id="audio-player">
 					<source src="{% static song_url %}" type="audio/mpeg">
 				</audio>
